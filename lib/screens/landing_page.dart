@@ -8,6 +8,9 @@ class LandingPage extends StatefulWidget {
   _LandingPageState createState() => _LandingPageState();
 }
 
+//Works as of 27/06/2020.
+//Docs were wrong as to how to fetch the response text.
+//Use fulfillmentText instead of queryText (which makes total sense!!)
 class _LandingPageState extends State<LandingPage> {
   Future getResponse(String query) async {
     AuthGoogle authGoogle =

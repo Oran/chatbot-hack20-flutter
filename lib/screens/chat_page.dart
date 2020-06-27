@@ -1,11 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' show rootBundle;
 
 class ChatPage extends StatelessWidget {
+  final assetsAudioPlayer = AssetsAudioPlayer();
+
   Future<String> _loadURL() async {
     return await rootBundle.loadString('secrets.json');
   }
@@ -24,12 +27,27 @@ class ChatPage extends StatelessWidget {
           child: RaisedButton(
             child: Text('Speak'),
             onPressed: () async {
-              await getSpeech('Hello Senpai.');
+              await playback('Hello how');
             },
           ),
         ),
       ),
     );
+  }
+
+  Future<dynamic> playback(String text) async {
+    final http.Response response = await getSpeech(text);
+
+    try {
+      await assetsAudioPlayer.open(
+        Audio.network(jsonDecode(response.body)[0]['url']),
+      );
+    } catch (t) {
+      //mp3 unreachable
+      print("Doesn't work!");
+    }
+
+    return "Hi";
   }
 
   Future<http.Response> getSpeech(String text) async {
@@ -67,5 +85,6 @@ class ChatPage extends StatelessWidget {
     } while (flag == false);
 
     return responseGet;
+    //jsonDecode(responseGet.body)[0]['url']
   }
 }
