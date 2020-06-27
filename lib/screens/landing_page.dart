@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dialogflow_v2/flutter_dialogflow_v2.dart';
+import 'package:flutter_dialogflow_v2/flutter_dialogflow_v2.dart' as df;
+import 'package:hack2020/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../components/bot_nav_bar.dart';
 
 class LandingPage extends StatefulWidget {
   static final String id = 'landing_page';
@@ -13,31 +16,56 @@ class LandingPage extends StatefulWidget {
 //Use fulfillmentText instead of queryText (which makes total sense!!)
 class _LandingPageState extends State<LandingPage> {
   Future getResponse(String query) async {
-    AuthGoogle authGoogle =
-        await AuthGoogle(fileJson: 'assets/ai-bot-281615-3c7bd40e8810.json')
+    df.AuthGoogle authGoogle =
+        await df.AuthGoogle(fileJson: 'assets/ai-bot-281615-3c7bd40e8810.json')
             .build();
-    Dialogflow dialogflow = Dialogflow(
+    df.Dialogflow dialogflow = df.Dialogflow(
       authGoogle: authGoogle,
       sessionId: '123456',
     );
-    DetectIntentResponse response =
+    df.DetectIntentResponse response =
         await dialogflow.detectIntentFromText(query, 'en');
     print(response.queryResult.fulfillmentText);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SafeArea(
       child: Scaffold(
+        backgroundColor: kPrimaryBlack,
         body: Container(
-          child: Center(
-            child: RaisedButton(
-              onPressed: () {
-                getResponse('hi');
-              },
-            ),
+          decoration: BoxDecoration(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Text(
+                  '<App Name>',
+                  style: GoogleFonts.pressStart2p(
+                    color: kAccentColor,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+              Divider(
+                color: kAccentDarkGrey,
+                thickness: 2.0,
+                indent: 40.0,
+                endIndent: 40.0,
+              ),
+              Text(
+                'ChatBot A.I',
+                style: GoogleFonts.cantarell(
+                  color: kAccentGrey,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              )
+            ],
           ),
         ),
+        bottomNavigationBar: BotNavBar(),
       ),
     );
   }
