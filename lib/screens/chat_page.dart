@@ -4,18 +4,21 @@ import 'dart:convert';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:dash_chat/dash_chat.dart';
 import 'package:flutter/material.dart';
+
 import 'package:hack2020/services/network.dart';
+
+import 'package:hack2020/components/bot_nav_bar.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' show rootBundle;
 
 class ChatPage extends StatelessWidget {
+  static final String id = 'chat_page';
   final assetsAudioPlayer = AssetsAudioPlayer();
 
   Future<String> _loadURL() async {
     return await rootBundle.loadString('secrets.json');
   }
-
-  static final String id = 'chat_page';
 
   void onSend(ChatMessage message) async {
     messages.add(message);
@@ -134,5 +137,24 @@ class ChatPage extends StatelessWidget {
     print(responseGet.body);
     return responseGet;
     //jsonDecode(responseGet.body)[0]['url']
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 100,
+          height: 100,
+          child: RaisedButton(
+            child: Text('Speak'),
+            onPressed: () async {
+              await playback('Hello how');
+            },
+          ),
+        ),
+      ),
+      bottomNavigationBar: BotNavBar(),
+    );
   }
 }
