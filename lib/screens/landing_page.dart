@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dialogflow_v2/flutter_dialogflow_v2.dart';
+import 'package:hack2020/services/network.dart';
 
 class LandingPage extends StatefulWidget {
   static final String id = 'landing_page';
@@ -8,22 +8,14 @@ class LandingPage extends StatefulWidget {
   _LandingPageState createState() => _LandingPageState();
 }
 
+
+
+
 //Works as of 27/06/2020.
 //Docs were wrong as to how to fetch the response text.
 //Use fulfillmentText instead of queryText (which makes total sense!!)
 class _LandingPageState extends State<LandingPage> {
-  Future getResponse(String query) async {
-    AuthGoogle authGoogle =
-        await AuthGoogle(fileJson: 'assets/ai-bot-281615-3c7bd40e8810.json')
-            .build();
-    Dialogflow dialogflow = Dialogflow(
-      authGoogle: authGoogle,
-      sessionId: '123456',
-    );
-    DetectIntentResponse response =
-        await dialogflow.detectIntentFromText(query, 'en');
-    print(response.queryResult.fulfillmentText);
-  }
+  
 
   @override
   Widget build(BuildContext context) {

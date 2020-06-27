@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## Custom Dialogflow Version
+Using the one from a pull request which hasn't been fulfilled which fixes the HTTP requirement of the audio package. [Dialogflow](https://github.com/indigothm/flutter_dialogflow)

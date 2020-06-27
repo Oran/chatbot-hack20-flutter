@@ -23,12 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   http: ^0.12.1
   assets_audio_player: ^2.0.6+4
+  dash_chat: ^1.1.10
   flutter_dialogflow_v2:
     git:
       url: https://github.com/indigothm/flutter_dialogflow.git

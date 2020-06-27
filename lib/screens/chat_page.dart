@@ -2,7 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:dash_chat/dash_chat.dart';
 import 'package:flutter/material.dart';
+import 'package:hack2020/services/network.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -13,26 +15,40 @@ class ChatPage extends StatelessWidget {
     return await rootBundle.loadString('secrets.json');
   }
 
-  //Future<Secret> secret = SecretLoader(secretPath: "secrets.json").load();
-
   static final String id = 'chat_page';
 
+  void onSend(ChatMessage message) async {
+    messages.add(message);
+  }
+
+  final List<ChatMessage> messages = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          child: RaisedButton(
-            child: Text('Speak'),
-            onPressed: () async {
-              await playback('Hello how');
-            },
-          ),
+        appBar: AppBar(
+          title: Text("Hey, I'm Waifu A.I."),
+          backgroundColor: Colors.black87,
         ),
-      ),
-    );
+        body: DashChat(
+          user: ChatUser(
+            name: "Jhon Doe",
+            uid: "xxxxxxxxx",
+            avatar:
+                "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
+          ),
+          onSend: onSend,
+          messages: messages,
+        )
+
+        /* child: RaisedButton(
+              child: Text('Speak'),
+              onPressed: () async {
+                //Add default response in Dialogflow so the app doesn't work.
+                await playback(await getResponse("hello"));
+              },
+            ), */
+
+        );
   }
 
   Future<dynamic> playback(String text) async {
@@ -84,6 +100,7 @@ class ChatPage extends StatelessWidget {
       }
     } while (flag == false);
 
+    print(responseGet.body);
     return responseGet;
     //jsonDecode(responseGet.body)[0]['url']
   }
