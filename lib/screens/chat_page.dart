@@ -19,9 +19,38 @@ class ChatPage extends StatelessWidget {
 
   void onSend(ChatMessage message) async {
     messages.add(message);
+    String response = await getResponse(message.text);
+    ChatMessage reply;
+    if (response != null) {
+      reply = ChatMessage(
+        text: response,
+        user: ChatUser(
+          name: "Fayeed",
+          uid: "xxxxxxxxxy",
+          avatar:
+              "https://www.wrappixel.com/ampleadmin/assets/images/users/3.jpg",
+        ),
+        createdAt: DateTime.now(),
+        quickReplies: QuickReplies(),
+      );
+    } else {
+      reply = ChatMessage(
+        text: "Sorry, cannot process that!",
+        user: ChatUser(
+          name: "Fayeed",
+          uid: "xxxxxxxxxy",
+          avatar:
+              "https://www.wrappixel.com/ampleadmin/assets/images/users/3.jpg",
+        ),
+        createdAt: DateTime.now(),
+        quickReplies: QuickReplies(),
+      );
+    }
+    messages.add(reply);
   }
 
-  final List<ChatMessage> messages = [];
+  final List<ChatMessage> messages = List<ChatMessage>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +67,8 @@ class ChatPage extends StatelessWidget {
           ),
           onSend: onSend,
           messages: messages,
+          showAvatarForEveryMessage: true,
+          showUserAvatar: true,
         )
 
         /* child: RaisedButton(
