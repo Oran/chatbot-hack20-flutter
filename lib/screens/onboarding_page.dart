@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hack2020/components/op_data.dart';
+import 'package:hack2020/components/ob_data.dart';
 import 'package:hack2020/constants.dart';
+import 'package:hack2020/screens/landing_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   static final String id = 'onboarding_page';
@@ -48,8 +49,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
           itemCount: slides.length,
           itemBuilder: (context, index) {
             return SliderTile(
+              description: slides[index].getDesc(),
+              descriptionTwo: slides[index].getDesc2(),
               text: slides[index].getText(),
-              imageAssetPath: slides[index].getImageAssetPath(),
+              //imageAssetPath: slides[index].getImageAssetPath(),
             );
           },
         ),
@@ -60,36 +63,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
               height: 50.0,
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  InkWell(
-                    onTap: () {
-                      setState(() {
-                        currentSliderIndex = 2;
-                      });
-                    },
-                    child: Text(
-                      'Skip',
-                      style: GoogleFonts.pressStart2p(color: kAccentColor),
-                    ),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      for (int i = 0; i < slides.length; i++)
-                        currentSliderIndex == i
-                            ? pageIndexIndicator(true)
-                            : pageIndexIndicator(false),
-                    ],
-                  ),
-                  InkWell(
-                    onTap: () {
-                      // setState(() {
-                      //   currentSliderIndex + 1;
-                      // });
-                    },
-                    child: Text(
-                      '    ',
-                      style: GoogleFonts.pressStart2p(color: kAccentColor),
+                  Center(
+                    child: Row(
+                      children: <Widget>[
+                        for (int i = 0; i < slides.length; i++)
+                          currentSliderIndex == i
+                              ? pageIndexIndicator(true)
+                              : pageIndexIndicator(false),
+                      ],
                     ),
                   ),
                 ],
@@ -101,9 +84,14 @@ class _OnboardingPageState extends State<OnboardingPage> {
               height: 50.0,
               width: (MediaQuery.of(context).size.width),
               padding: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text(
-                'Get Started',
-                style: GoogleFonts.pressStart2p(color: kAccentColor),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, LandingPage.id);
+                },
+                child: Text(
+                  'Get Started',
+                  style: GoogleFonts.pressStart2p(color: kAccentColor),
+                ),
               ),
             ),
     );
@@ -111,10 +99,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
 }
 
 class SliderTile extends StatelessWidget {
-  SliderTile({this.text, this.imageAssetPath});
+  SliderTile(
+      {this.text, this.imageAssetPath, this.description, this.descriptionTwo});
 
   final String text;
   final String imageAssetPath;
+  final String description;
+  final String descriptionTwo;
 
   @override
   Widget build(BuildContext context) {
@@ -122,19 +113,42 @@ class SliderTile extends StatelessWidget {
       color: kPrimaryBlack,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Expanded(
-            child: Image.asset(
-              imageAssetPath,
-              // width: (MediaQuery.of(context).size.width),
-              // height: (MediaQuery.of(context).size.height),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              text,
+              style: GoogleFonts.pressStart2p(
+                color: kAccentColor,
+                fontSize: 30.0,
+              ),
             ),
           ),
-          // Text(
-          //   text,
-          //   style:
-          //       GoogleFonts.pressStart2p(color: kAccentColor, fontSize: 40.0),
-          // ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              description,
+              style: GoogleFonts.poppins(
+                color: kColorLightGrey,
+                fontWeight: FontWeight.w500,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: InkWell(
+              child: Text(
+                descriptionTwo,
+                style: GoogleFonts.poppins(
+                  color: kColorLightGrey,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18.0,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
