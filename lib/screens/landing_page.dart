@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dialogflow_v2/flutter_dialogflow_v2.dart' as df;
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../components/bot_nav_bar.dart';
