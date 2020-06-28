@@ -29,7 +29,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     super.initState();
     isLoading = true;
-    _handleSubmitted(widget.query, "99");
+    _handleSubmitted(widget.query, "1");
   }
 
   List<ChatItemModel> chatItems = [];
