@@ -9,6 +9,9 @@ import 'package:hack2020/services/dialog.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class ChatPage extends StatefulWidget {
+  ChatPage({this.query = "Introduction"});
+  final String query;
+
   @override
   _ChatPageState createState() => _ChatPageState();
 }
@@ -26,7 +29,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     super.initState();
     isLoading = true;
-    _handleSubmitted("Introduction", "99");
+    _handleSubmitted(widget.query, "99");
   }
 
   List<ChatItemModel> chatItems = [];

@@ -5,7 +5,6 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import '../components/small_container.dart';
 
 class LandingPage extends StatefulWidget {
-
   @override
   _LandingPageState createState() => _LandingPageState();
 }
@@ -67,7 +66,8 @@ class _LandingPageState extends State<LandingPage> {
                       SmallContainers(
                         icon: LineAwesomeIcons.weixin,
                         onPressed: () {
-                          Navigator.pushNamed(context, chatPageID);
+                          Navigator.pushNamed(context, chatPageID,
+                              arguments: "love you");
                         },
                       ),
                       // SmallContainers(icon: Icons.satellite,),

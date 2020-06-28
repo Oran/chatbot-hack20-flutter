@@ -37,7 +37,7 @@ class SettingsPage extends StatelessWidget {
               SettingItem(
                 text: "Voice Selection",
                 icon: Icon(
-                  Icons.keyboard_voice,
+                  Icons.music_note,
                   color: kPrimaryWhite,
                 ),
                 pageId: voiceSelectionPageID,
@@ -50,15 +50,8 @@ class SettingsPage extends StatelessWidget {
                   color: kPrimaryWhite,
                 ),
               ),
-              SizedBox(height: 20.0),
-              Text(
-                "Extra",
-                style: TextStyle(
-                  color: kAccentColor,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              SizedBox(height: 40.0),
+              
               //TODO IMPLEMENT ENABLE
               EnableVoiceSwitch(),
               SwitchListTile(
@@ -72,6 +65,7 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
                 onChanged: null,
+                secondary: const Icon(Icons.developer_mode, color: kAccentColor,),
               ),
               SwitchListTile(
                 activeColor: kAccentColor,
@@ -84,6 +78,7 @@ class SettingsPage extends StatelessWidget {
                   ),
                 ),
                 onChanged: null,
+                secondary: const Icon(Icons.record_voice_over, color: kAccentColor,),
               ),
             ],
           ),
@@ -125,7 +120,7 @@ class _EnableVoiceSwitchState extends State<EnableVoiceSwitch> {
           GlobalConfiguration().updateValue("voiceEnabled", val);
         });
       },
-      secondary: const Icon(Icons.lightbulb_outline),
+      secondary: const Icon(Icons.mic, color: kAccentColor,),
     );
   }
 }

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         onboardingPageID: (context) => OnboardingPage(),
         landingPageID: (context) => LandingPage(),
-        chatPageID: (context) => ChatPage(),
+        chatPageID: (context) => ChatPage(query: ModalRoute.of(context).settings.arguments),
         settingsPageID: (context) => SettingsPage(),
         voiceSelectionPageID: (context) => VoiceSelectionPage(),
       },
