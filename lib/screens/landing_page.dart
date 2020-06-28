@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hack2020/components/horizontal_icons_view.dart';
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
-import '../components/small_container.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -24,55 +24,58 @@ class _LandingPageState extends State<LandingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Center(
-                  child: Text(
-                    '<App Name>',
-                    style: GoogleFonts.pressStart2p(
-                      color: kAccentColor,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: kAccentDarkGrey,
-                  thickness: 2.0,
-                  indent: 40.0,
-                  endIndent: 40.0,
-                ),
-                Text(
-                  'ChatBot A.I',
-                  style: GoogleFonts.cantarell(
-                    color: kAccentGrey,
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
                 Container(
-                  color: kPrimaryBlack,
-                  height: 200.0,
-                  child: GridView.count(
-                    padding: EdgeInsets.all(10.0),
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20.0,
-                    mainAxisSpacing: 20.0,
+                  child: Column(
                     children: <Widget>[
-                      SmallContainers(
-                        icon: LineAwesomeIcons.cog,
-                        onPressed: () {
-                          Navigator.pushNamed(context, settingsPageID);
-                        },
+                      Center(
+                        child: Text(
+                          'waifu.ai',
+                          style: GoogleFonts.lekton(
+                            color: kAccentColor,
+                            fontSize: 40.0,
+                            letterSpacing: 2,
+                          ),
+                        ),
                       ),
-                      SmallContainers(
-                        icon: LineAwesomeIcons.weixin,
-                        onPressed: () {
-                          Navigator.pushNamed(context, chatPageID,
-                              arguments: "love you");
-                        },
+                      Divider(
+                        color: kAccentDarkGrey,
+                        thickness: 2.0,
+                        indent: 40.0,
+                        endIndent: 40.0,
+                      ),
+                      Text(
+                        'ChatBot A.I',
+                        style: GoogleFonts.lekton(
+                          color: kAccentGrey,
+                          fontSize: 30.0,
+                        ),
                       ),
                     ],
                   ),
                 ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    height: 300.0,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: kPrimaryBlack,
+                      borderRadius: BorderRadius.circular(30.0),
+                      border: Border.all(
+                        width: 2,
+                        color: kAccentColor,
+                      ),
+                    ),
+                    child: Container(
+                      child: Image.asset(
+                        'assets/gif/green.gif',
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                HosIcons(),
               ],
             ),
           ),

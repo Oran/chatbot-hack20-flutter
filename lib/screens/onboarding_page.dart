@@ -115,7 +115,6 @@ class SliderTile extends StatelessWidget {
       color: kPrimaryBlack,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(20.0),
