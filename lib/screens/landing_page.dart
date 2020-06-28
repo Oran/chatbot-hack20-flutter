@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../components/bot_nav_bar.dart';
+import 'package:hack2020/screens/chat_page.dart';
+import 'package:hack2020/screens/settings_page.dart';
+import 'package:line_awesome_icons/line_awesome_icons.dart';
+import '../components/small_container.dart';
 
 class LandingPage extends StatefulWidget {
   static final String id = 'landing_page';
@@ -20,7 +23,6 @@ class _LandingPageState extends State<LandingPage> {
       child: Scaffold(
         backgroundColor: kPrimaryBlack,
         body: Container(
-          decoration: BoxDecoration(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -47,11 +49,36 @@ class _LandingPageState extends State<LandingPage> {
                   fontSize: 25.0,
                   fontWeight: FontWeight.w500,
                 ),
-              )
+              ),
+              Container(
+                color: kPrimaryBlack,
+                height: 590.0,
+                child: GridView.count(
+                  padding: EdgeInsets.all(10.0),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 20.0,
+                  children: <Widget>[
+                    SmallContainers(
+                      icon: LineAwesomeIcons.cog,
+                      onPressed: () {
+                        Navigator.pushNamed(context, SettingsPage.id);
+                      },
+                    ),
+                    SmallContainers(
+                      icon: LineAwesomeIcons.weixin,
+                      onPressed: () {
+                        Navigator.pushNamed(context, ChatPage.id);
+                      },
+                    ),
+                    // SmallContainers(icon: Icons.satellite,),
+                    // SmallContainers(icon: Icons.satellite,),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-        bottomNavigationBar: BotNavBar(),
       ),
     );
   }
