@@ -7,7 +7,6 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class ChatPage extends StatefulWidget {
   static final String id = 'chat_page';
-
   @override
   _ChatPageState createState() => _ChatPageState();
 }

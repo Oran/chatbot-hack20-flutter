@@ -30,7 +30,6 @@ dependencies:
   cupertino_icons: ^0.1.3
   http: ^0.12.1
   assets_audio_player: ^2.0.6+4
-  dash_chat:  1.1.10 #1.1.10 is broken
   flutter_dialogflow_v2:
     git:
       url: https://github.com/indigothm/flutter_dialogflow.git
@@ -54,6 +53,7 @@ flutter:
   assets:
     - assets/ai-bot-281615-3c7bd40e8810.json
     - secrets.json
+    - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
