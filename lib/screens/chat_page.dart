@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:global_configuration/global_configuration.dart';
 import 'package:hack2020/constants.dart';
 import 'package:hack2020/services/audio_player.dart';
 import 'package:hack2020/services/dialog.dart';
@@ -59,7 +60,10 @@ class _ChatPageState extends State<ChatPage> {
       });
       _handleSubmitted(text, "99");
     } else {
-      await playback(text);
+      if (GlobalConfiguration().getBool("voiceEnabled")) {
+        await playback(text);
+      }
+
       setState(() {
         isLoading = false;
         chatItems.add(message);
@@ -143,8 +147,8 @@ class _ChatPageState extends State<ChatPage> {
                             "${chatItems[index].message}",
                             style: TextStyle(
                               color: chatItems[index].senderId == currentUser
-                                ? kAccentGrey
-                                : kPrimaryWhite,
+                                  ? kAccentGrey
+                                  : kPrimaryWhite,
                               fontSize: 16,
                             ),
                           ),

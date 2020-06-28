@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_configuration/global_configuration.dart';
 import 'package:hack2020/constants.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -57,18 +58,8 @@ class SettingsPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SwitchListTile(
-                activeColor: kAccentColor,
-                contentPadding: const EdgeInsets.all(0),
-                value: true,
-                title: Text(
-                  'Enable Voice',
-                  style: TextStyle(
-                    color: kPrimaryWhite,
-                  ),
-                ),
-                onChanged: (val) {},
-              ),
+              //TODO IMPLEMENT ENABLE
+              EnableVoiceSwitch(),
               SwitchListTile(
                 activeColor: kAccentColor,
                 contentPadding: const EdgeInsets.all(0),
@@ -79,7 +70,7 @@ class SettingsPage extends StatelessWidget {
                     color: kPrimaryWhite,
                   ),
                 ),
-                onChanged: (val) {},
+                onChanged: null,
               ),
               SwitchListTile(
                 activeColor: kAccentColor,
@@ -91,12 +82,49 @@ class SettingsPage extends StatelessWidget {
                     color: kPrimaryWhite,
                   ),
                 ),
-                onChanged: (val) {},
+                onChanged: null,
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class EnableVoiceSwitch extends StatefulWidget {
+  @override
+  _EnableVoiceSwitchState createState() => _EnableVoiceSwitchState();
+}
+
+class _EnableVoiceSwitchState extends State<EnableVoiceSwitch> {
+  bool _enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    _enabled = GlobalConfiguration().getBool("voiceEnabled");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SwitchListTile(
+      activeColor: kAccentColor,
+      contentPadding: const EdgeInsets.all(0),
+      value: _enabled,
+      title: Text(
+        'Enable Voice',
+        style: TextStyle(
+          color: kPrimaryWhite,
+        ),
+      ),
+      onChanged: (bool val) {
+        setState(() {
+          _enabled = val;
+          GlobalConfiguration().updateValue("voiceEnabled", val);
+        });
+      },
+      secondary: const Icon(Icons.lightbulb_outline),
     );
   }
 }
