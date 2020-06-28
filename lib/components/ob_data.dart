@@ -37,7 +37,7 @@ List<SliderModel> getSlides() {
 
   //page1
   sliderModel.setText('Ai');
-  sliderModel.setDesc('ADD SOME DATA HERE'); //TODO: ADD DATA HERE
+  sliderModel.setDesc('ChatBot App'); //TODO: ADD DATA HERE
   sliderModel.setDesc2(''); 
   slides.add(sliderModel);
 

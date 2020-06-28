@@ -55,7 +55,6 @@ flutter:
   assets:
     - assets/ai-bot-281615-3c7bd40e8810.json
     - secrets.json
-    - assets/images/
     - assets/cfg/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
