@@ -4,7 +4,6 @@ import 'package:hack2020/components/ob_data.dart';
 import 'package:hack2020/constants.dart';
 
 class OnboardingPage extends StatefulWidget {
-
   @override
   _OnboardingPageState createState() => _OnboardingPageState();
 }
@@ -72,6 +71,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               : pageIndexIndicator(false),
                       ],
                     ),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_right,
+                    color: kAccentColor,
+                    size: 30.0,
                   ),
                 ],
               ),
