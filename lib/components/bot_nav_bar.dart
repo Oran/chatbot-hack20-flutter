@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hack2020/screens/chat_page.dart';
-import 'package:hack2020/screens/landing_page.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:hack2020/constants.dart';
 
@@ -27,7 +25,7 @@ class BotNavBar extends StatelessWidget {
           children: <Widget>[
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, LandingPage.id);
+                Navigator.pushNamed(context, landingPageID);
               },
               child: Icon(
                 LineAwesomeIcons.home,
@@ -37,7 +35,7 @@ class BotNavBar extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, ChatPage.id);
+                Navigator.pushNamed(context, chatPageID);
               },
               child: Icon(
                 LineAwesomeIcons.weixin,

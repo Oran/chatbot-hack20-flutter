@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack2020/components/ob_data.dart';
 import 'package:hack2020/constants.dart';
-import 'package:hack2020/screens/landing_page.dart';
 
 class OnboardingPage extends StatefulWidget {
-  static final String id = 'onboarding_page';
 
   @override
   _OnboardingPageState createState() => _OnboardingPageState();
@@ -86,7 +84,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, LandingPage.id);
+                  Navigator.pushNamed(context, landingPageID);
                 },
                 child: Text(
                   'Get Started',
