@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack2020/screens/chat_page.dart';
-import 'package:hack2020/screens/settings_page.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import '../components/small_container.dart';
 
@@ -64,7 +63,7 @@ class _LandingPageState extends State<LandingPage> {
                       SmallContainers(
                         icon: LineAwesomeIcons.cog,
                         onPressed: () {
-                          Navigator.pushNamed(context, SettingsPage.id);
+                          Navigator.pushNamed(context, settingsPageID);
                         },
                       ),
                       SmallContainers(

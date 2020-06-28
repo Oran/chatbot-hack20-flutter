@@ -7,3 +7,6 @@ const kAccentGrey = Color(0xFF3F4743);
 const kAccentColor = Color(0xFF0AFF8D);
 const kColorBlack = Color(0xFF0E0F0F);
 const kColorLightGrey = Color(0xFF696969);
+final String settingsPageID = "settings_page";
+final String voiceSelectionPageID = "voice_selection_page";
+
