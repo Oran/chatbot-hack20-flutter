@@ -21,61 +21,64 @@ class _LandingPageState extends State<LandingPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: kPrimaryBlack,
-        body: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: Text(
-                  '<App Name>',
-                  style: GoogleFonts.pressStart2p(
-                    color: kAccentColor,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.w900,
+        body: Padding(
+          padding: EdgeInsets.only(top: 20.0),
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    '<App Name>',
+                    style: GoogleFonts.pressStart2p(
+                      color: kAccentColor,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                 ),
-              ),
-              Divider(
-                color: kAccentDarkGrey,
-                thickness: 2.0,
-                indent: 40.0,
-                endIndent: 40.0,
-              ),
-              Text(
-                'ChatBot A.I',
-                style: GoogleFonts.cantarell(
-                  color: kAccentGrey,
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.w500,
+                Divider(
+                  color: kAccentDarkGrey,
+                  thickness: 2.0,
+                  indent: 40.0,
+                  endIndent: 40.0,
                 ),
-              ),
-              Container(
-                color: kPrimaryBlack,
-                height: 520.0,
-                child: GridView.count(
-                  padding: EdgeInsets.all(10.0),
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 20.0,
-                  children: <Widget>[
-                    SmallContainers(
-                      icon: LineAwesomeIcons.cog,
-                      onPressed: () {
-                        Navigator.pushNamed(context, settingsPageID);
-                      },
-                    ),
-                    SmallContainers(
-                      icon: LineAwesomeIcons.weixin,
-                      onPressed: () {
-                        Navigator.pushNamed(context, ChatPage.id);
-                      },
-                    ),
-                    // SmallContainers(icon: Icons.satellite,),
-                    // SmallContainers(icon: Icons.satellite,),
-                  ],
+                Text(
+                  'ChatBot A.I',
+                  style: GoogleFonts.cantarell(
+                    color: kAccentGrey,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+                Container(
+                  color: kColorLightGrey,
+                  height: 200.0,
+                  child: GridView.count(
+                    padding: EdgeInsets.all(10.0),
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 20.0,
+                    mainAxisSpacing: 20.0,
+                    children: <Widget>[
+                      SmallContainers(
+                        icon: LineAwesomeIcons.cog,
+                        onPressed: () {
+                          Navigator.pushNamed(context, settingsPageID);
+                        },
+                      ),
+                      SmallContainers(
+                        icon: LineAwesomeIcons.weixin,
+                        onPressed: () {
+                          Navigator.pushNamed(context, ChatPage.id);
+                        },
+                      ),
+                      // SmallContainers(icon: Icons.satellite,),
+                      // SmallContainers(icon: Icons.satellite,),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
