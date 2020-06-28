@@ -24,7 +24,7 @@ class HosIcons extends StatelessWidget {
           SizedBox(width: 20.0),
           SmallContainers(
             onPressed: () {
-              Navigator.pushNamed(context, chatPageID);
+              Navigator.pushNamed(context, chatPageID, arguments: "love you");
             },
             icon: LineAwesomeIcons.weixin,
           ),
