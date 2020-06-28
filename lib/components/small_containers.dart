@@ -20,7 +20,7 @@ class SmallContainers extends StatelessWidget {
           borderRadius: BorderRadius.circular(30.0),
           border: Border.all(
             width: 2,
-            color: kAccentColor,
+            color: kPrimaryWhite,
           ),
         ),
         child: Center(
