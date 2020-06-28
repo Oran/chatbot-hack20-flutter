@@ -123,10 +123,12 @@ class SliderTile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            imageAssetPath,
-            width: (MediaQuery.of(context).size.width),
-            height: (MediaQuery.of(context).size.height),
+          Expanded(
+            child: Image.asset(
+              imageAssetPath,
+              // width: (MediaQuery.of(context).size.width),
+              // height: (MediaQuery.of(context).size.height),
+            ),
           ),
           // Text(
           //   text,
