@@ -3,13 +3,11 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hack2020/constants.dart';
-import 'package:hack2020/screens/landing_page.dart';
 import 'package:hack2020/services/audio_player.dart';
 import 'package:hack2020/services/dialog.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class ChatPage extends StatefulWidget {
-  static final String id = 'chat_page';
   @override
   _ChatPageState createState() => _ChatPageState();
 }
@@ -90,7 +88,7 @@ class _ChatPageState extends State<ChatPage> {
             Icons.arrow_back,
             color: kAccentColor,
           ),
-          onPressed: () => Navigator.pushNamed(context, LandingPage.id),
+          onPressed: () => Navigator.pushNamed(context, landingPageID),
         ),
         title: Text("Waifu A.I."),
         centerTitle: true,

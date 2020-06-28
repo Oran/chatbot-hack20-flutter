@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hack2020/constants.dart';
-import 'package:hack2020/screens/landing_page.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -15,7 +14,7 @@ class SettingsPage extends StatelessWidget {
             Icons.arrow_back,
             color: kAccentColor,
           ),
-          onPressed: () => Navigator.pushNamed(context, LandingPage.id),
+          onPressed: () => Navigator.pushNamed(context, landingPageID),
         ),
         title: Text("Settings"),
         centerTitle: true,

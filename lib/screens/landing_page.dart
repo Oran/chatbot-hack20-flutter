@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hack2020/screens/chat_page.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import '../components/small_container.dart';
 
 class LandingPage extends StatefulWidget {
-  static final String id = 'landing_page';
 
   @override
   _LandingPageState createState() => _LandingPageState();
@@ -69,7 +67,7 @@ class _LandingPageState extends State<LandingPage> {
                       SmallContainers(
                         icon: LineAwesomeIcons.weixin,
                         onPressed: () {
-                          Navigator.pushNamed(context, ChatPage.id);
+                          Navigator.pushNamed(context, chatPageID);
                         },
                       ),
                       // SmallContainers(icon: Icons.satellite,),
