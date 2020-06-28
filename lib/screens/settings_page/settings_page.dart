@@ -20,6 +20,7 @@ class SettingsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
+        padding: EdgeInsets.all(15.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -108,6 +108,7 @@ class ListOptions extends StatelessWidget {
         value: title.split(new RegExp(r" "))[0],
         groupValue: selectedVoice,
         onChanged: updateVoice,
+        activeColor: kAccentColor,
       ),
       onTap: () => updateVoice(title.split(new RegExp(r" "))[0]),
     );
