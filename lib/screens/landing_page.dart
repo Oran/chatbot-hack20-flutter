@@ -50,7 +50,7 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 Container(
-                  color: kColorLightGrey,
+                  color: kPrimaryBlack,
                   height: 200.0,
                   child: GridView.count(
                     padding: EdgeInsets.all(10.0),
