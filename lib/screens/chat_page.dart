@@ -183,6 +183,7 @@ class _ChatPageState extends State<ChatPage> {
           children: <Widget>[
             Expanded(
               child: TextField(
+                cursorColor: kAccentColor,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.all(20.0),
