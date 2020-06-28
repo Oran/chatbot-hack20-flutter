@@ -56,34 +56,86 @@ class _VoiceSelectorState extends State<VoiceSelector> {
 //GlobalConfiguration().updateValue("voice", "Mizuki");
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListOptions(
-          title: "Justin [English]",
-          selectedVoice: selectedVoice,
-          updateVoice: updateVoice,
-        ),
-        ListOptions(
-          title: "Maja [Polish]",
-          selectedVoice: selectedVoice,
-          updateVoice: updateVoice,
-        ),
-        ListOptions(
-          title: "Enrique [Spanish]",
-          selectedVoice: selectedVoice,
-          updateVoice: updateVoice,
-        ),
-        ListOptions(
-          title: "Marlene [German]",
-          selectedVoice: selectedVoice,
-          updateVoice: updateVoice,
-        ),
-        ListOptions(
-          title: "Mizuki [Japanese]",
-          selectedVoice: selectedVoice,
-          updateVoice: updateVoice,
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          ListOptions(
+            title: "Justin [English - Default]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Maja [Polish]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Enrique [Spanish]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Marlene [German]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Mathiue [French]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Cristiano [Portuguese]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Liv [Norwegian]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Mizuki [Japanese]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Carla [Italian]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Carmen [Romanian]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Tatyana [Russian]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Astrid [Swedish]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Filiz [Turkish]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Gwyneth [Welsh]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+          ListOptions(
+            title: "Karl [Icelandic]",
+            selectedVoice: selectedVoice,
+            updateVoice: updateVoice,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_configuration/global_configuration.dart';
 import 'package:hack2020/constants.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -36,7 +37,7 @@ class SettingsPage extends StatelessWidget {
               SettingItem(
                 text: "Voice Selection",
                 icon: Icon(
-                  Icons.keyboard_voice,
+                  Icons.music_note,
                   color: kPrimaryWhite,
                 ),
                 pageId: voiceSelectionPageID,
@@ -49,27 +50,10 @@ class SettingsPage extends StatelessWidget {
                   color: kPrimaryWhite,
                 ),
               ),
-              SizedBox(height: 20.0),
-              Text(
-                "Extra",
-                style: TextStyle(
-                  color: kAccentColor,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SwitchListTile(
-                activeColor: kAccentColor,
-                contentPadding: const EdgeInsets.all(0),
-                value: true,
-                title: Text(
-                  'Enable Voice',
-                  style: TextStyle(
-                    color: kPrimaryWhite,
-                  ),
-                ),
-                onChanged: (val) {},
-              ),
+              SizedBox(height: 40.0),
+              
+              //TODO IMPLEMENT ENABLE
+              EnableVoiceSwitch(),
               SwitchListTile(
                 activeColor: kAccentColor,
                 contentPadding: const EdgeInsets.all(0),
@@ -80,7 +64,8 @@ class SettingsPage extends StatelessWidget {
                     color: kPrimaryWhite,
                   ),
                 ),
-                onChanged: (val) {},
+                onChanged: null,
+                secondary: const Icon(Icons.developer_mode, color: kAccentColor,),
               ),
               SwitchListTile(
                 activeColor: kAccentColor,
@@ -92,12 +77,50 @@ class SettingsPage extends StatelessWidget {
                     color: kPrimaryWhite,
                   ),
                 ),
-                onChanged: (val) {},
+                onChanged: null,
+                secondary: const Icon(Icons.record_voice_over, color: kAccentColor,),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class EnableVoiceSwitch extends StatefulWidget {
+  @override
+  _EnableVoiceSwitchState createState() => _EnableVoiceSwitchState();
+}
+
+class _EnableVoiceSwitchState extends State<EnableVoiceSwitch> {
+  bool _enabled;
+
+  @override
+  void initState() {
+    super.initState();
+    _enabled = GlobalConfiguration().getBool("voiceEnabled");
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SwitchListTile(
+      activeColor: kAccentColor,
+      contentPadding: const EdgeInsets.all(0),
+      value: _enabled,
+      title: Text(
+        'Enable Voice',
+        style: TextStyle(
+          color: kPrimaryWhite,
+        ),
+      ),
+      onChanged: (bool val) {
+        setState(() {
+          _enabled = val;
+          GlobalConfiguration().updateValue("voiceEnabled", val);
+        });
+      },
+      secondary: const Icon(Icons.mic, color: kAccentColor,),
     );
   }
 }

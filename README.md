@@ -1,20 +1,25 @@
-# hack2020
+# W[ai]fu
 
-A new Flutter project.
+Chatbot Project for the Hack2020 Flutter Hackathon. Uses Dialogflow for auto generated replies, and AWS (Polly, S3, SNS, and more) for Text to Speech.
+
+
+## Requirements
+You will need to have to have set up the AWS and DialogFlow api endpoints before this app will work. For the sake of the hackathon, we have made public APIs so that it can be used for the testing phase.
+Note that these APIs will be disabled as soon as the Hackathon voting stage is over!
+
+
+- [Amazon Polly Setup](https://aws.amazon.com/blogs/machine-learning/build-your-own-text-to-speech-applications-with-amazon-polly/)
 
 ## Getting Started
+# Step 1
+After having having the requirements fulfilled, you need to fill in the `hack2020-Flutter/secrets.json` with your API endpoint for AWS, and modify the file `hack2020-Flutter/assets/ai-bot.....json`. You can happily refactor this file, we just were too lazy honestly!
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Step 2
+Next, you can simply 'flutter run' the app.
 
 
 ## Custom Dialogflow Version
-Using the one from a pull request which hasn't been fulfilled which fixes the HTTP requirement of the audio package. [Dialogflow](https://github.com/indigothm/flutter_dialogflow)
+In order for this project to run, we have needed to rely on a specific version of the DialogFlowv2 package on `pub.dev`. 
+We have luckily found a user that upgraded the dependency of HTTP, which otherwise it would have not worked. Big shoutout to `indigothm`!!
+
+ [Dialogflow](https://github.com/indigothm/flutter_dialogflow)
