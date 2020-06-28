@@ -4,9 +4,8 @@ import 'dart:convert';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:dash_chat/dash_chat.dart';
 import 'package:flutter/material.dart';
-
+import 'package:hack2020/constants.dart';
 import 'package:hack2020/services/network.dart';
-
 import 'package:hack2020/components/bot_nav_bar.dart';
 
 import 'package:http/http.dart' as http;
@@ -28,6 +27,8 @@ class ChatPage extends StatelessWidget {
       reply = ChatMessage(
         text: response,
         user: ChatUser(
+          containerColor: kAccentGrey,
+          color: kPrimaryWhite,
           name: "Fayeed",
           uid: "xxxxxxxxxy",
           avatar:
@@ -40,6 +41,8 @@ class ChatPage extends StatelessWidget {
       reply = ChatMessage(
         text: "Sorry, cannot process that!",
         user: ChatUser(
+          containerColor: kColorLightGrey,
+          color: kPrimaryWhite,
           name: "Fayeed",
           uid: "xxxxxxxxxy",
           avatar:
@@ -54,35 +57,49 @@ class ChatPage extends StatelessWidget {
 
   final List<ChatMessage> messages = List<ChatMessage>();
 
+  Widget sendIcon() {
+    return IconButton(
+      onPressed: () {},
+      icon: Icon(Icons.ac_unit),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Hey, I'm Waifu A.I."),
-          backgroundColor: Colors.black87,
+      backgroundColor: kPrimaryBlack,
+      bottomNavigationBar: BotNavBar(),
+      body: DashChat(
+        scrollToBottom: false,
+        user: ChatUser(
+          containerColor: kAccentColor,
+          color: kColorBlack,
+          name: "Jhon Doe",
+          uid: "xxxxxxxxx",
+          avatar:
+              "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
         ),
-        body: DashChat(
-          user: ChatUser(
-            name: "Jhon Doe",
-            uid: "xxxxxxxxx",
-            avatar:
-                "https://www.wrappixel.com/ampleadmin/assets/images/users/4.jpg",
-          ),
-          onSend: onSend,
-          messages: messages,
-          showAvatarForEveryMessage: true,
-          showUserAvatar: true,
-        )
-
-        /* child: RaisedButton(
+        onSend: onSend,
+        messages: messages,
+        showAvatarForEveryMessage: true,
+        showUserAvatar: true,
+        inputContainerStyle: BoxDecoration(color: kPrimaryBlack),
+        inputCursorColor: kAccentColor,
+        inputTextStyle: TextStyle(color: kPrimaryWhite),
+        inputDecoration: InputDecoration(
+          hintText: 'Type here',
+          hintStyle: TextStyle(color: kAccentGrey),
+        ),
+        
+      ),
+      /* child: RaisedButton(
               child: Text('Speak'),
               onPressed: () async {
                 //Add default response in Dialogflow so the app doesn't work.
                 await playback(await getResponse("hello"));
               },
             ), */
-
-        );
+    );
   }
 
   Future<dynamic> playback(String text) async {
@@ -137,24 +154,5 @@ class ChatPage extends StatelessWidget {
     print(responseGet.body);
     return responseGet;
     //jsonDecode(responseGet.body)[0]['url']
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          child: RaisedButton(
-            child: Text('Speak'),
-            onPressed: () async {
-              await playback('Hello how');
-            },
-          ),
-        ),
-      ),
-      bottomNavigationBar: BotNavBar(),
-    );
   }
 }
