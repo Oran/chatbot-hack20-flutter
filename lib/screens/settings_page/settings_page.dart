@@ -80,6 +80,7 @@ class SettingsPage extends StatelessWidget {
                 onChanged: null,
                 secondary: const Icon(Icons.record_voice_over, color: kAccentColor,),
               ),
+              
             ],
           ),
         ),

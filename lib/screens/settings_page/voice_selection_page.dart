@@ -32,8 +32,6 @@ class VoiceSelector extends StatefulWidget {
   _VoiceSelectorState createState() => _VoiceSelectorState();
 }
 
-//TODO: Implement Initial State of what's in the settings.json
-
 class _VoiceSelectorState extends State<VoiceSelector> {
   String selectedVoice;
 

@@ -70,8 +70,6 @@ class _LandingPageState extends State<LandingPage> {
                               arguments: "love you");
                         },
                       ),
-                      // SmallContainers(icon: Icons.satellite,),
-                      // SmallContainers(icon: Icons.satellite,),
                     ],
                   ),
                 ),
