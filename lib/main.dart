@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack2020/screens/chat_page.dart';
+import 'package:hack2020/screens/chat_page.dart';
 import 'package:hack2020/screens/landing_page.dart';
 import 'package:hack2020/screens/settings_page.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: LandingPage.id,
+      initialRoute: ChatPage.id,
       routes: {
         LandingPage.id: (context) => LandingPage(),
         ChatPage.id: (context) => ChatPage(),
