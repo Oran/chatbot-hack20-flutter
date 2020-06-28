@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack2020/screens/chat_page.dart';
 import 'package:hack2020/screens/landing_page.dart';
-import 'package:hack2020/screens/settings_page.dart';
+import 'package:hack2020/screens/settings_page/settings_page.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:hack2020/constants.dart';
 

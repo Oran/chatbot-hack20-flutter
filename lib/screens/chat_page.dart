@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hack2020/constants.dart';
 import 'package:hack2020/screens/landing_page.dart';
 import 'package:hack2020/services/audio_player.dart';
 import 'package:hack2020/services/dialog.dart';
@@ -80,12 +81,12 @@ class _ChatPageState extends State<ChatPage> {
       resizeToAvoidBottomPadding: false,
       backgroundColor: AppColors.mainColor,
       appBar: AppBar(
-        backgroundColor: AppColors.mainColor,
+        backgroundColor: kPrimaryBlack,
         elevation: 0,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: AppColors.blueColor,
+            color: kAccentColor,
           ),
           onPressed: () => Navigator.pushNamed(context, LandingPage.id),
         ),
