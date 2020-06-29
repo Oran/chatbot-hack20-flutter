@@ -135,7 +135,7 @@ class SliderTile extends StatelessWidget {
               text: text,
               glowing: true,
               font: NeonFont.Beon,
-              fontSize: 90.0,
+              fontSize: 80.0,
               color: Colors.green,
               flickeringText: true,
               flickeringLetters: [0, 1],
