@@ -3,6 +3,7 @@ import 'package:global_configuration/global_configuration.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack2020/components/ob_data.dart';
 import 'package:hack2020/constants.dart';
+import 'package:neon/neon.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -59,7 +60,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       bottomSheet: currentSliderIndex != slides.length - 1
           ? Container(
               color: kPrimaryBlack,
-              height: 50.0,
+              height: 80.0,
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +86,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           : Container(
               alignment: Alignment.center,
               color: kPrimaryBlack,
-              height: 50.0,
+              height: 80.0,
               width: (MediaQuery.of(context).size.width),
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: InkWell(
@@ -120,12 +121,21 @@ class SliderTile extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(20.0),
-            child: Text(
-              text,
-              style: GoogleFonts.pressStart2p(
-                color: kAccentColor,
-                fontSize: 30.0,
-              ),
+            // child: Text(
+            //   text,
+            //   style: GoogleFonts.pressStart2p(
+            //     color: kAccentColor,
+            //     fontSize: 30.0,
+            //   ),
+            // ),
+            child: Neon(
+              text: text,
+              glowing: true,
+              font: NeonFont.Beon,
+              fontSize: 40.0,
+              color: Colors.green,
+              flickeringText: true,
+              flickeringLetters: [0, 1],
             ),
           ),
           Container(
