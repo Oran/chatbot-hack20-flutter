@@ -45,7 +45,7 @@ class _LandingPageState extends State<LandingPage> {
                       endIndent: 40.0,
                     ),
                     Text(
-                      'ChatBot A.I.',
+                      'ChatBot',
                       style: GoogleFonts.lekton(
                         color: kAccentGrey,
                         fontSize: 30.0,

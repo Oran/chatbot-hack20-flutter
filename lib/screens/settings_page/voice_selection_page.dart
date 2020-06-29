@@ -79,7 +79,7 @@ class _VoiceSelectorState extends State<VoiceSelector> {
             updateVoice: updateVoice,
           ),
           ListOptions(
-            title: "Mathiue [French]",
+            title: "Mathieu [French]",
             selectedVoice: selectedVoice,
             updateVoice: updateVoice,
           ),
