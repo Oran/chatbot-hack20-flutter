@@ -28,15 +28,15 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     super.initState();
-    isLoading = true;
-    _handleSubmitted(widget.query, "1");
+    isLoading = widget.query != '';
+    // ignore: unnecessary_statements
+    widget.query != "" ? _handleSubmitted(widget.query, currentUser) : {};
   }
 
   List<ChatItemModel> chatItems = [];
 
   void _handleSubmitted(String text, String user) async {
     _textController.clear();
-    reply = '';
 
     if (user == "99") {
       text = await getResponse(text);
@@ -52,6 +52,7 @@ class _ChatPageState extends State<ChatPage> {
       setState(() {
         isLoading = true;
         chatItems.add(message);
+        reply = '';
       });
       //Add animation via a post frame callback
       SchedulerBinding.instance.addPostFrameCallback((_) {
@@ -220,6 +221,7 @@ class _ChatPageState extends State<ChatPage> {
                 SystemChannels.textInput.invokeMethod('TextInput.hide');
                 // ignore: unnecessary_statements
                 reply != '' ? _handleSubmitted(reply, currentUser) : {};
+                _textController.clear();
               },
             ),
           ],

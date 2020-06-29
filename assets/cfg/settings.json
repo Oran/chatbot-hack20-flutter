@@ -1,4 +1,5 @@
 {
     "voice": "Justin",
-    "voiceEnabled": true
+    "voiceEnabled": true,
+    "onBoarding": false
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:global_configuration/global_configuration.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack2020/components/ob_data.dart';
 import 'package:hack2020/constants.dart';
@@ -16,6 +17,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void initState() {
     super.initState();
     slides = getSlides();
+    GlobalConfiguration().updateValue('onBoarding', true);
   }
 
   Widget pageIndexIndicator(bool isCurrentPage) {

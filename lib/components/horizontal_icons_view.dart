@@ -7,7 +7,7 @@ class HosIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.0,
+      height: 120.0,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,23 +16,18 @@ class HosIcons extends StatelessWidget {
         children: <Widget>[
           SizedBox(width: 20.0),
           SmallContainers(
-            onPressed: () {
-              Navigator.pushNamed(context, settingsPageID);
-            },
-            icon: LineAwesomeIcons.cog,
+            onPressed: () =>
+                Navigator.pushNamed(context, chatPageID, arguments: ""),
+            icon: LineAwesomeIcons.weixin,
+            text: 'Chat',
           ),
           SizedBox(width: 20.0),
           SmallContainers(
-            onPressed: () {
-              Navigator.pushNamed(context, chatPageID, arguments: "love you");
-            },
-            icon: LineAwesomeIcons.weixin,
+            onPressed: () => Navigator.pushNamed(context, settingsPageID),
+            icon: LineAwesomeIcons.cog,
+            text: 'Settings',
           ),
           SizedBox(width: 20.0),
-          // SmallContainers(
-          //   icon: Icons.videogame_asset,
-          // ),
-          // SizedBox(width: 20.0),
         ],
       ),
     );

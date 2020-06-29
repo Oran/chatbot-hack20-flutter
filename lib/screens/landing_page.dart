@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hack2020/components/horizontal_icons_view.dart';
 import 'package:hack2020/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_awesome_icons/line_awesome_icons.dart';
+import 'package:neon/neon.dart';
+import '../components/lp_card.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -28,13 +29,13 @@ class _LandingPageState extends State<LandingPage> {
                   child: Column(
                     children: <Widget>[
                       Center(
-                        child: Text(
-                          'waifu.ai',
-                          style: GoogleFonts.lekton(
-                            color: kAccentColor,
-                            fontSize: 40.0,
-                            letterSpacing: 2,
-                          ),
+                        child: Neon(
+                          text: 'waifu.ai',
+                          font: NeonFont.Beon,
+                          fontSize: 40.0,
+                          color: Colors.green,
+                          flickeringText: true,
+                          flickeringLetters: [7, 6],
                         ),
                       ),
                       Divider(
@@ -44,7 +45,7 @@ class _LandingPageState extends State<LandingPage> {
                         endIndent: 40.0,
                       ),
                       Text(
-                        'ChatBot A.I',
+                        'ChatBot A.I.',
                         style: GoogleFonts.lekton(
                           color: kAccentGrey,
                           fontSize: 30.0,
@@ -54,28 +55,28 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 SizedBox(height: 20.0),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Container(
-                    height: 300.0,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: kPrimaryBlack,
-                      borderRadius: BorderRadius.circular(30.0),
-                      border: Border.all(
-                        width: 2,
-                        color: kAccentColor,
-                      ),
-                    ),
-                    child: Container(
-                      child: Image.asset(
-                        'assets/gif/green.gif',
-                      ),
+                HosIcons(),
+                SizedBox(height: 10.0),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxHeight: 470),
+                  child: GlowingOverscrollIndicator(
+                    axisDirection: AxisDirection.down,
+                    color: kAccentColor,
+                    child: ListView(
+                      physics: BouncingScrollPhysics(),
+                      children: <Widget>[
+                        LPCard(text: 'Hello'),
+                        LPCard(text: 'Who are you?'),
+                        LPCard(text: 'Tell me a joke'),
+                        LPCard(text: 'Hello'),
+                        LPCard(text: 'Hello'),
+                        LPCard(text: 'Hello'),
+                        LPCard(text: 'Hello'),
+                        LPCard(text: 'Hello'),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20.0),
-                HosIcons(),
               ],
             ),
           ),
