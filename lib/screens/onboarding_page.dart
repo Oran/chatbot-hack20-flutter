@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:global_configuration/global_configuration.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:waifu.ai/components/ob_data.dart';
 import 'package:waifu.ai/constants.dart';
-import 'package:neon/neon.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
