@@ -48,6 +48,7 @@ class _VoiceSelectorState extends State<VoiceSelector> {
             GlobalConfiguration().updateValue("voice", voice);
             print(selectedVoice);
           })
+        // ignore: unnecessary_statements
         : {};
   }
 
