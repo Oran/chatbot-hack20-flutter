@@ -63,9 +63,9 @@ class _LandingPageState extends State<LandingPage> {
                   children: <Widget>[
                     LPCard(text: 'Hello'),
                     LPCard(text: 'Who are you?'),
+                    LPCard(text: 'Poem'),
+                    LPCard(text: 'Who\'s Joe?'),
                     LPCard(text: 'Tell me a joke'),
-                    LPCard(text: 'Ha ha ha!'),
-                    LPCard(text: 'You\'re so clever'),
                     LPCard(text: 'Are you happy?'),
                     LPCard(text: 'Are we friends?'),
                     LPCard(text: 'Thank you'),
