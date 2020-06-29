@@ -25,7 +25,7 @@ We have luckily found a user that upgraded the dependency of HTTP, which otherwi
  [Dialogflow](https://github.com/indigothm/flutter_dialogflow)
  
  
-## Resources uses
+## Resources used
 
 [Amazon Polly](https://aws.amazon.com/polly/)
 
