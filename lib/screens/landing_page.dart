@@ -55,7 +55,7 @@ class _LandingPageState extends State<LandingPage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20.0),
+                SizedBox(height: 10.0),
                 HosIcons(),
                 SizedBox(height: 10.0),
                 Expanded(
