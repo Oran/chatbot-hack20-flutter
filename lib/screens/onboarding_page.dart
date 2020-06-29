@@ -135,7 +135,7 @@ class SliderTile extends StatelessWidget {
               text: text,
               glowing: true,
               font: NeonFont.Beon,
-              fontSize: 80.0,
+              fontSize: 40.0,
               color: Colors.green,
               flickeringText: true,
               flickeringLetters: [0, 1],
@@ -148,7 +148,7 @@ class SliderTile extends StatelessWidget {
               style: GoogleFonts.poppins(
                 color: kColorLightGrey,
                 fontWeight: FontWeight.w500,
-                fontSize: 30.0,
+                fontSize: 20.0,
               ),
             ),
           ),
@@ -160,7 +160,7 @@ class SliderTile extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   color: kColorLightGrey,
                   fontWeight: FontWeight.w500,
-                  fontSize: 30.0,
+                  fontSize: 20.0,
                 ),
               ),
             ),

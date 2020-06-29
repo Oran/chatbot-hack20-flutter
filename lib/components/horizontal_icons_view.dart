@@ -7,7 +7,7 @@ class HosIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120.0,
+      height: 130.0,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
