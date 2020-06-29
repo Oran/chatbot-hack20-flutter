@@ -27,9 +27,9 @@ In order for this project to run, we have needed to rely on a specific version o
 We have luckily found a user that upgraded the dependency of HTTP, which otherwise it would have not worked. Big shoutout to [indigothm](https://github.com/indigothm/flutter_dialogflow)!!
 
 ## Contributors
-[ItsOran](https://github.com/ItsOran)
+Oran - [ItsOran](https://github.com/ItsOran)
 
-[ExitTrance](https://github.com/ExitTrance)
+Stefan Dourado - [ExitTrance](https://github.com/ExitTrance)
 
 
 ## Resources used
