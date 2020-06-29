@@ -85,7 +85,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             )
           : Container(
               alignment: Alignment.center,
-              color: kPrimaryBlack,
+              color: kAccentColor,
               height: 80.0,
               width: (MediaQuery.of(context).size.width),
               padding: EdgeInsets.symmetric(horizontal: 20.0),
@@ -95,7 +95,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 },
                 child: Text(
                   'Get Started',
-                  style: GoogleFonts.pressStart2p(color: kAccentColor),
+                  style: GoogleFonts.acme(
+                    color: kPrimaryBlack,
+                    fontSize: 25.0,
+                  ),
                 ),
               ),
             ),
