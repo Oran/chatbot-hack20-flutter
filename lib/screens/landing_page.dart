@@ -31,6 +31,7 @@ class _LandingPageState extends State<LandingPage> {
                       Center(
                         child: Neon(
                           text: 'waifu.ai',
+                          glowing: true,
                           font: NeonFont.Beon,
                           fontSize: 40.0,
                           color: Colors.green,
@@ -57,24 +58,19 @@ class _LandingPageState extends State<LandingPage> {
                 SizedBox(height: 20.0),
                 HosIcons(),
                 SizedBox(height: 10.0),
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 470),
-                  child: GlowingOverscrollIndicator(
-                    axisDirection: AxisDirection.down,
-                    color: kAccentColor,
-                    child: ListView(
-                      physics: BouncingScrollPhysics(),
-                      children: <Widget>[
-                        LPCard(text: 'Hello'),
-                        LPCard(text: 'Who are you?'),
-                        LPCard(text: 'Tell me a joke'),
-                        LPCard(text: 'Hello'),
-                        LPCard(text: 'Hello'),
-                        LPCard(text: 'Hello'),
-                        LPCard(text: 'Hello'),
-                        LPCard(text: 'Hello'),
-                      ],
-                    ),
+                Expanded(
+                  child: ListView(
+                    physics: BouncingScrollPhysics(),
+                    children: <Widget>[
+                      LPCard(text: 'Hello'),
+                      LPCard(text: 'Who are you?'),
+                      LPCard(text: 'Tell me a joke'),
+                      LPCard(text: 'Ha ha ha!'),
+                      LPCard(text: 'You\'re so clever'),
+                      LPCard(text: 'Are you happy?'),
+                      LPCard(text: 'Are we friends?'),
+                      LPCard(text: 'Thank you'),
+                    ],
                   ),
                 ),
               ],
