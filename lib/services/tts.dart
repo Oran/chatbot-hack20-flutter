@@ -7,9 +7,6 @@ Future<String> _loadSecrets() async {
   return await rootBundle.loadString('secrets.json');
 }
 
-Future<String> _loadSettings() async {
-  return await rootBundle.loadString('assets/cfg/settings.json');
-}
 
 Future<http.Response> getSpeech(String text) async {
   String secret = await _loadSecrets();
