@@ -23,3 +23,9 @@ In order for this project to run, we have needed to rely on a specific version o
 We have luckily found a user that upgraded the dependency of HTTP, which otherwise it would have not worked. Big shoutout to `indigothm`!!
 
  [Dialogflow](https://github.com/indigothm/flutter_dialogflow)
+ 
+ 
+## Resources uses
+
+[Amazon Polly](https://aws.amazon.com/polly/)
+[Dialogflow](https://dialogflow.cloud.google.com/)
