@@ -11,6 +11,10 @@ Note that these APIs will be disabled as soon as the Hackathon voting stage is o
 - [Amazon Polly Setup](https://aws.amazon.com/blogs/machine-learning/build-your-own-text-to-speech-applications-with-amazon-polly/)
 
 ## Getting Started
+
+# Quick Start
+Simply install the latest apk from [Releases](https://github.com/ItsOran/waifu.ai-hack20-flutter/releases).
+
 # Step 1
 After having having the requirements fulfilled, you need to fill in the `hack2020-Flutter/secrets.json` with your API endpoint for AWS, and modify the file `hack2020-Flutter/assets/ai-bot.....json`. You can happily refactor this file, we just were too lazy honestly!
 
