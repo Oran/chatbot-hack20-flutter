@@ -1,4 +1,4 @@
-# W[ai]fu
+# Waifu.ai
 
 Chatbot Project for the Hack2020 Flutter Hackathon. Uses Dialogflow for auto generated replies, and AWS (Polly, S3, SNS, and more) for Text to Speech.
 
