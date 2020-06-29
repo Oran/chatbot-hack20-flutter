@@ -1,158 +1,84 @@
 import 'package:flutter/material.dart';
+import 'package:hack2020/components/horizontal_icons_view.dart';
 import 'package:hack2020/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class LandingPage extends StatefulWidget {
   @override
   _LandingPageState createState() => _LandingPageState();
 }
 
+//Works as of 27/06/2020.
+//Docs were wrong as to how to fetch the response text.
+//Use fulfillmentText instead of queryText (which makes total sense!!)
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kPrimaryBlack,
-      body: Container(
-        padding: EdgeInsets.all(15.0),
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            Center(
-              child: Text(
-                'Ai',
-                style: TextStyle(
-                  color: kPrimaryWhite,
-                  fontSize: 30,
-                ),
-              ),
-            ),
-            SizedBox(height: 50.0),
-            Container(
-              margin: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: kPrimaryBlack,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(15),
-                ),
-                border: Border.all(color: Colors.white),
-              ),
-              child: TextField(
-                cursorColor: kAccentColor,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: const EdgeInsets.all(20.0),
-                  hintText: "Type something...",
-                  hintStyle: TextStyle(
-                    color: kAccentGrey,
-                  ),
-                ),
-                style: TextStyle(
-                  color: kPrimaryWhite,
-                ),
-              ),
-            ),
-            Flexible(
-              child: ListView(
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 16.0,
-                      bottom: 16.0,
-                      left: 24.0,
-                      right: 24.0,
-                    ),
-                    height: 92.0,
-                    decoration: new BoxDecoration(
-                      border: Border.all(color: Colors.purple, width: 2),
-                      color: kPrimaryBlack,
-                      shape: BoxShape.rectangle,
-                      borderRadius: new BorderRadius.circular(8.0),
-                      boxShadow: <BoxShadow>[
-                        new BoxShadow(
-                          color: Colors.purple,
-                          blurRadius: 10.0,
-                          //offset: new Offset(0.0, 10.0),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 16.0,
-                      bottom: 16.0,
-                      left: 24.0,
-                      right: 24.0,
-                    ),
-                    height: 93.0,
-                    decoration: new BoxDecoration(
-                      border: Border.all(color: kAccentColor),
-                      color: kPrimaryBlack,
-                      shape: BoxShape.rectangle,
-                      borderRadius: new BorderRadius.circular(8.0),
-                      boxShadow: <BoxShadow>[
-                        new BoxShadow(
-                          color: kAccentColor,
-                          blurRadius: 10.0,
-                          //offset: new Offset(0.0, 10.0),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 16.0,
-                      bottom: 16.0,
-                      left: 24.0,
-                      right: 24.0,
-                    ),
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          margin: new EdgeInsets.only(left: 46.0),
-                          height: 93.0,
-                          decoration: new BoxDecoration(
-                            border: Border.all(color: Colors.red),
-                            color: kPrimaryBlack,
-                            shape: BoxShape.rectangle,
-                            borderRadius: new BorderRadius.circular(8.0),
-                            boxShadow: <BoxShadow>[
-                              new BoxShadow(
-                                color: Colors.red,
-                                blurRadius: 10.0,
-                                //offset: new Offset(0.0, 10.0),
-                              ),
-                            ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: kPrimaryBlack,
+        body: Padding(
+          padding: EdgeInsets.only(top: 20.0),
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                        child: Text(
+                          'waifu.ai',
+                          style: GoogleFonts.lekton(
+                            color: kAccentColor,
+                            fontSize: 40.0,
+                            letterSpacing: 2,
                           ),
                         ),
-                        Icon(Icons.music_note, size: 93,),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(
-                      top: 16.0,
-                      bottom: 16.0,
-                      left: 24.0,
-                      right: 24.0,
-                    ),
-                    height: 93.0,
-                    decoration: new BoxDecoration(
-                      border: Border.all(color: Colors.pink),
-                      color: kPrimaryBlack,
-                      shape: BoxShape.rectangle,
-                      borderRadius: new BorderRadius.circular(8.0),
-                      boxShadow: <BoxShadow>[
-                        new BoxShadow(
-                          color: Colors.pink,
-                          blurRadius: 10.0,
-                          //offset: new Offset(0.0, 10.0),
+                      ),
+                      Divider(
+                        color: kAccentDarkGrey,
+                        thickness: 2.0,
+                        indent: 40.0,
+                        endIndent: 40.0,
+                      ),
+                      Text(
+                        'ChatBot A.I',
+                        style: GoogleFonts.lekton(
+                          color: kAccentGrey,
+                          fontSize: 30.0,
                         ),
-                      ],
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    height: 300.0,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: kPrimaryBlack,
+                      borderRadius: BorderRadius.circular(30.0),
+                      border: Border.all(
+                        width: 2,
+                        color: kAccentColor,
+                      ),
+                    ),
+                    child: Container(
+                      child: Image.asset(
+                        'assets/gif/green.gif',
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 20.0),
+                HosIcons(),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
