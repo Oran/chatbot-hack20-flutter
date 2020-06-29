@@ -24,11 +24,14 @@ Next, you can simply 'flutter run' the app.
 
 ## Custom Dialogflow Version
 In order for this project to run, we have needed to rely on a specific version of the DialogFlowv2 package on `pub.dev`. 
-We have luckily found a user that upgraded the dependency of HTTP, which otherwise it would have not worked. Big shoutout to `indigothm`!!
+We have luckily found a user that upgraded the dependency of HTTP, which otherwise it would have not worked. Big shoutout to [indigothm](https://github.com/indigothm/flutter_dialogflow)!!
 
- [Dialogflow](https://github.com/indigothm/flutter_dialogflow)
- 
- 
+## Contributors
+[ItsOran](https://github.com/ItsOran)
+
+[ExitTrance](https://github.com/ExitTrance)
+
+
 ## Resources used
 
 [Amazon Polly](https://aws.amazon.com/polly/)
