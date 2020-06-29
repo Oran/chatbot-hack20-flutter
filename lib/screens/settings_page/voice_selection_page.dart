@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/constants.dart';
 import 'package:global_configuration/global_configuration.dart';
 
 class VoiceSelectionPage extends StatelessWidget {

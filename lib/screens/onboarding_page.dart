@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hack2020/components/ob_data.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/components/ob_data.dart';
+import 'package:waifu.ai/constants.dart';
 import 'package:neon/neon.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -18,7 +18,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void initState() {
     super.initState();
     slides = getSlides();
-    GlobalConfiguration().updateValue('onBoarding', true);
   }
 
   Widget pageIndexIndicator(bool isCurrentPage) {
@@ -57,7 +56,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           },
         ),
       ),
-      bottomSheet: currentSliderIndex != slides.length - 1
+      bottomNavigationBar: currentSliderIndex != slides.length - 1
           ? Container(
               color: kPrimaryBlack,
               height: 80.0,
@@ -124,22 +123,22 @@ class SliderTile extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(20.0),
-            // child: Text(
-            //   text,
-            //   style: GoogleFonts.pressStart2p(
-            //     color: kAccentColor,
-            //     fontSize: 30.0,
-            //   ),
-            // ),
-            child: Neon(
-              text: text,
-              glowing: true,
-              font: NeonFont.Beon,
-              fontSize: 40.0,
-              color: Colors.green,
-              flickeringText: true,
-              flickeringLetters: [0, 1],
+            child: Text(
+              text,
+              style: GoogleFonts.poppins(
+                color: kAccentColor,
+                fontSize: 40.0,
+              ),
             ),
+            // child: Neon(
+            //   text: text,
+            //   glowing: true,
+            //   font: NeonFont.Beon,
+            //   fontSize: 40.0,
+            //   color: Colors.green,
+            //   flickeringText: true,
+            //   flickeringLetters: [0, 1],
+            // ),
           ),
           Container(
             padding: EdgeInsets.all(20.0),

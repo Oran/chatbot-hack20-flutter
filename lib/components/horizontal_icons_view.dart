@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import './small_containers.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/constants.dart';
 
 class HosIcons extends StatelessWidget {
   @override

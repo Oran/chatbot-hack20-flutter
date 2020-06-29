@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/constants.dart';
 
 class SmallContainers extends StatelessWidget {
   SmallContainers({this.text = '', this.icon, this.onPressed});

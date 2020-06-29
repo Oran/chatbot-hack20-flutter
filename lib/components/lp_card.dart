@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/constants.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:global_configuration/global_configuration.dart';
-import 'package:hack2020/constants.dart';
+import 'package:waifu.ai/constants.dart';
 
 class SettingsPage extends StatelessWidget {
   @override

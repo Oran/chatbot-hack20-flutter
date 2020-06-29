@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:hack2020/services/tts.dart';
+import 'package:waifu.ai/services/tts.dart';
 import 'package:http/http.dart' as http;
 
 final assetsAudioPlayer = AssetsAudioPlayer();

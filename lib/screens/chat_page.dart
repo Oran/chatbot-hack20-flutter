@@ -3,9 +3,9 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:global_configuration/global_configuration.dart';
-import 'package:hack2020/constants.dart';
-import 'package:hack2020/services/audio_player.dart';
-import 'package:hack2020/services/dialog.dart';
+import 'package:waifu.ai/constants.dart';
+import 'package:waifu.ai/services/audio_player.dart';
+import 'package:waifu.ai/services/dialog.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class ChatPage extends StatefulWidget {

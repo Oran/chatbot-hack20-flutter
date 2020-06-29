@@ -36,8 +36,8 @@ List<SliderModel> getSlides() {
   SliderModel sliderModel = SliderModel();
 
   //page1
-  sliderModel.setText('Ai');
-  sliderModel.setDesc('ChatBot App'); //TODO: ADD DATA HERE
+  sliderModel.setText('waifu.ai');
+  sliderModel.setDesc('ChatBot App'); 
   sliderModel.setDesc2('');
   slides.add(sliderModel);
 
