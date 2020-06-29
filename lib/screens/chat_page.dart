@@ -20,8 +20,8 @@ class _ChatPageState extends State<ChatPage> {
   final TextEditingController _textController = new TextEditingController();
   final ScrollController _scrollController = new ScrollController();
 
-  String currentUser = "1";
-  String pairId = "99";
+  String currentUser = "Me";
+  String pairId = "Ai";
   bool isLoading = false;
   String reply;
 
@@ -29,7 +29,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     super.initState();
     isLoading = true;
-    _handleSubmitted(widget.query, "1");
+    _handleSubmitted(widget.query, currentUser);
   }
 
   List<ChatItemModel> chatItems = [];
@@ -38,7 +38,7 @@ class _ChatPageState extends State<ChatPage> {
     _textController.clear();
     reply = '';
 
-    if (user == "99") {
+    if (user == "Ai") {
       text = await getResponse(text);
       text = text != null ? text : "Sorry, this cannot be processed.";
     }
@@ -48,7 +48,7 @@ class _ChatPageState extends State<ChatPage> {
       message: text,
     );
 
-    if (user != "99") {
+    if (user != "Ai") {
       setState(() {
         isLoading = true;
         chatItems.add(message);
@@ -61,7 +61,7 @@ class _ChatPageState extends State<ChatPage> {
           curve: Curves.easeOut,
         );
       });
-      _handleSubmitted(text, "99");
+      _handleSubmitted(text, "Ai");
     } else {
       if (GlobalConfiguration().getBool("voiceEnabled")) {
         await playback(text);
@@ -156,6 +156,13 @@ class _ChatPageState extends State<ChatPage> {
                             ),
                           ),
                         ),
+                        const Divider(
+                          color: kPrimaryWhite,
+                          height: 20,
+                          thickness: 5,
+                          indent: 20,
+                          endIndent: 0,
+                        ),
                       ]);
                 }),
           ),
@@ -179,7 +186,7 @@ class _ChatPageState extends State<ChatPage> {
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         decoration: BoxDecoration(
-          color: kAccentDarkGrey,
+          color: kPrimaryBlack,
           borderRadius: BorderRadius.all(
             Radius.circular(10),
           ),
